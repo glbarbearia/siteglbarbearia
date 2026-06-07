@@ -1,0 +1,639 @@
+﻿/* 1. Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --cor-fundo: #0d0d0d;
+    --cor-superficie: #131313;
+    --cor-superficie-baixa: #1c1b1b;
+    --cor-superficie-media: #201f1f;
+    --cor-superficie-escura: #0e0e0e;
+    --cor-borda: #1c1c1c;
+    --cor-dourado: #e6c364;
+    --cor-texto: #e5e2e1;
+    --cor-texto-suave: #d0c5b2;
+    --fonte-titulo: 'Bebas Neue', sans-serif;
+    --fonte-texto: 'Montserrat', sans-serif;
+    --fonte-serifada: 'Playfair Display', serif;
+    --espaco-pagina: 40px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+    font-family: var(--fonte-texto);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+img,
+video,
+iframe {
+    display: block;
+    max-width: 100%;
+}
+
+button {
+    border: 0;
+    color: inherit;
+    font: inherit;
+    cursor: pointer;
+    background: none;
+}
+
+::selection {
+    color: var(--cor-superficie-escura);
+    background-color: var(--cor-dourado);
+}
+
+.material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+}
+
+/* 2. Cabeçalho */
+.cabecalho {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 50;
+    width: 100%;
+    height: 96px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 24px var(--espaco-pagina);
+    border-bottom: 1px solid var(--cor-borda);
+    background-color: var(--cor-fundo);
+}
+
+.cabecalho__menu span,
+.menu-lateral__fechar span {
+    color: var(--cor-dourado);
+    font-size: 40px;
+}
+
+.cabecalho__menu:hover,
+.menu-lateral__fechar:hover {
+    color: var(--cor-dourado);
+}
+
+.marca {
+    position: absolute;
+    left: 50%;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    transform: translateX(-50%);
+}
+
+.marca__logo,
+.rodape__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 50%;
+}
+
+.marca__logo {
+    width: 58px;
+    height: 58px;
+}
+
+.marca__logo img,
+.rodape__logo img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.marca__nome {
+    color: var(--cor-dourado);
+    font-family: var(--fonte-titulo);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+/* 3. Botões */
+.botao {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    color: var(--cor-superficie-escura);
+    background-color: var(--cor-dourado);
+    font-size: 12px;
+    font-weight: 700;
+    line-height: 1.2;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: 0.3s ease;
+}
+
+.botao:hover {
+    opacity: 0.9;
+}
+
+.botao--principal {
+    padding: 16px 24px;
+}
+
+.botao--contorno {
+    padding: 24px 80px;
+    color: var(--cor-dourado);
+    border: 1px solid var(--cor-dourado);
+    background-color: transparent;
+}
+
+.botao--contorno:hover {
+    color: var(--cor-superficie-escura);
+    background-color: var(--cor-dourado);
+    opacity: 1;
+}
+
+.botao--grande {
+    gap: 12px;
+    padding: 14px 42px;
+    font-size: 18px;
+    letter-spacing: 0.12em;
+}
+
+.botao--grande:hover {
+    transform: scale(1.05);
+}
+
+/* 4. Menu lateral */
+.menu-lateral {
+    position: fixed;
+    top: 96px;
+    left: 0;
+    z-index: 50;
+    display: none;
+    width: 280px;
+    max-width: 90vw;
+    padding: 24px;
+    color: var(--cor-texto);
+    border-right: 1px solid var(--cor-borda);
+    border-bottom: 1px solid var(--cor-borda);
+    background-color: var(--cor-superficie);
+}
+
+.menu-lateral.aberto {
+    display: block;
+}
+
+.menu-lateral__topo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 48px;
+}
+
+.menu-lateral__titulo {
+    font-family: var(--fonte-titulo);
+    font-size: 40px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.menu-lateral__links {
+    display: grid;
+    gap: 16px;
+}
+
+.menu-lateral__link {
+    display: block;
+    width: 100%;
+    padding: 16px 24px;
+    color: var(--cor-texto);
+    text-align: left;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    border: 1px solid var(--cor-borda);
+    border-radius: 16px;
+    background-color: var(--cor-superficie-baixa);
+    transition: background-color 0.3s ease;
+}
+
+.menu-lateral__link:hover {
+    background-color: var(--cor-superficie-media);
+}
+
+/* 5. Hero */
+main {
+    padding-top: 96px;
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 7fr 5fr;
+    min-height: 819px;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.hero__texto {
+    display: flex;
+    align-items: center;
+    padding: 80px var(--espaco-pagina);
+    border-right: 1px solid var(--cor-borda);
+}
+
+.hero__texto h1 {
+    max-width: 850px;
+    font-family: var(--fonte-serifada);
+    font-size: 110px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 0.9;
+}
+
+.hero__midia {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--espaco-pagina);
+    background-color: var(--cor-superficie-baixa);
+}
+
+.video-card {
+    position: relative;
+    width: 100%;
+    max-width: 384px;
+    aspect-ratio: 9 / 16;
+    overflow: hidden;
+    border: 1px solid rgba(230, 195, 100, 0.4);
+    border-radius: 16px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.45);
+}
+
+.video-card video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.video-card__borda {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border: 4px solid transparent;
+    border-radius: 16px;
+    mix-blend-mode: overlay;
+}
+
+/* 6. Faixa de serviços */
+.faixa-servicos {
+    position: relative;
+    overflow: hidden;
+    padding: 24px 0;
+    white-space: nowrap;
+    border-bottom: 1px solid var(--cor-borda);
+    background-color: var(--cor-superficie-escura);
+}
+
+.faixa-servicos__lista {
+    display: inline-block;
+    animation: ticker 30s linear infinite;
+}
+
+.faixa-servicos__lista span {
+    margin: 0 48px;
+    font-family: var(--fonte-titulo);
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.faixa-servicos__lista strong {
+    margin: 0 16px;
+    color: var(--cor-dourado);
+}
+
+/* 7. História */
+.historia {
+    display: grid;
+    grid-template-columns: 5fr 7fr;
+    border-bottom: 1px solid var(--cor-borda);
+}
+
+.historia__imagem {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--espaco-pagina);
+    border-right: 1px solid var(--cor-borda);
+    background-color: var(--cor-superficie-baixa);
+}
+
+.historia__moldura {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    overflow: hidden;
+    padding: 24px;
+    border: 1px solid var(--cor-borda);
+}
+
+.historia__moldura img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.historia__texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 80px var(--espaco-pagina);
+}
+
+.historia__texto h2,
+.localizacao__texto h2 {
+    margin-bottom: 48px;
+    font-family: var(--fonte-serifada);
+    font-size: 48px;
+    font-style: italic;
+    font-weight: 700;
+    line-height: 1.1;
+}
+
+.historia__texto p,
+.localizacao__texto p {
+    max-width: 672px;
+    margin-bottom: 80px;
+    color: var(--cor-texto-suave);
+    font-size: 18px;
+    line-height: 1.6;
+    letter-spacing: 0.01em;
+}
+
+.historia__texto blockquote {
+    padding: 16px 0 16px 48px;
+    border-left: 1px solid var(--cor-dourado);
+    font-family: var(--fonte-serifada);
+    font-size: 32px;
+    font-style: italic;
+    line-height: 1.1;
+}
+
+/* 8. Localização */
+.localizacao {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    min-height: 500px;
+    border-top: 1px solid var(--cor-borda);
+    border-bottom: 1px solid var(--cor-borda);
+    background-color: var(--cor-superficie);
+}
+
+.localizacao__texto {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: var(--espaco-pagina);
+    border-right: 1px solid var(--cor-borda);
+}
+
+.localizacao__texto h2 {
+    margin-bottom: 16px;
+    font-family: var(--fonte-titulo);
+    font-style: normal;
+}
+
+.localizacao__texto p {
+    margin-bottom: 48px;
+}
+
+.localizacao__mapa {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 300px;
+    padding: var(--espaco-pagina);
+    background-color: var(--cor-superficie-baixa);
+}
+
+.localizacao__mapa iframe {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    border: 1px solid var(--cor-borda) !important;
+    background-color: var(--cor-superficie-escura);
+}
+
+/* 9. Chamada final e rodapé */
+.chamada-final {
+    display: flex;
+    min-height: 400px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 64px var(--espaco-pagina);
+    text-align: center;
+    background-color: var(--cor-superficie-escura);
+}
+
+.chamada-final h2 {
+    margin-bottom: 48px;
+    font-family: var(--fonte-titulo);
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.1;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+}
+
+.rodape {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 80px;
+    padding: 80px var(--espaco-pagina);
+    border-top: 1px solid var(--cor-borda);
+    background-color: var(--cor-superficie-escura);
+}
+
+.rodape__marca,
+.rodape__coluna {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.rodape__logo {
+    width: 82px;
+    height: 82px;
+}
+
+.rodape__marca strong {
+    color: var(--cor-dourado);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.rodape p,
+.rodape a {
+    color: var(--cor-texto-suave);
+    font-size: 16px;
+    line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.rodape__marca p {
+    max-width: 320px;
+    font-size: 14px;
+    opacity: 0.6;
+}
+
+.rodape h4 {
+    margin-bottom: 16px;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+.rodape a:hover {
+    color: var(--cor-dourado);
+}
+
+/* 10. Animações */
+@keyframes ticker {
+    from {
+        transform: translateX(0);
+    }
+
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+/* 11. Responsivo */
+@media (max-width: 900px) {
+    :root {
+        --espaco-pagina: 24px;
+    }
+
+    .cabecalho {
+        padding: 20px var(--espaco-pagina);
+    }
+
+    .marca__nome {
+        font-size: 26px;
+    }
+
+    .botao--principal {
+        padding: 14px 18px;
+    }
+
+    .hero,
+    .historia,
+    .localizacao,
+    .rodape {
+        grid-template-columns: 1fr;
+    }
+
+    .hero__texto,
+    .historia__imagem,
+    .localizacao__texto {
+        border-right: 0;
+    }
+
+    .hero__texto {
+        min-height: 360px;
+        border-bottom: 1px solid var(--cor-borda);
+    }
+
+    .hero__texto h1 {
+        font-size: 80px;
+    }
+
+    .historia__texto h2,
+    .localizacao__texto h2 {
+        font-size: 42px;
+    }
+}
+
+@media (max-width: 620px) {
+    .cabecalho {
+        height: 88px;
+    }
+
+    main {
+        padding-top: 88px;
+    }
+
+    .menu-lateral {
+        top: 88px;
+    }
+
+    .marca {
+        gap: 8px;
+    }
+
+    .marca__logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .marca__nome {
+        font-size: 22px;
+        letter-spacing: 0.08em;
+    }
+
+    .botao--principal {
+        font-size: 11px;
+        padding: 12px 14px;
+    }
+
+    .hero__texto h1 {
+        font-size: 64px;
+    }
+
+    .hero__midia,
+    .historia__imagem,
+    .historia__texto,
+    .localizacao__texto,
+    .localizacao__mapa,
+    .rodape {
+        padding-left: 24px;
+        padding-right: 24px;
+    }
+
+    .faixa-servicos__lista span {
+        margin: 0 28px;
+        font-size: 28px;
+    }
+
+    .historia__texto blockquote {
+        padding-left: 24px;
+        font-size: 26px;
+    }
+
+    .botao--contorno {
+        width: 100%;
+        padding: 20px 24px;
+    }
+}

@@ -1,0 +1,172 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GL Barbearia</title>
+    <link rel="icon" type="image/png" href="./assets/images/logo-gl-barbearia.png">
+
+    <!-- Fontes usadas nos títulos, textos e ícones do site. -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap"
+        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+        rel="stylesheet">
+
+    <!-- Arquivo CSS principal, onde fica toda a aparência da página. -->
+    <link rel="stylesheet" href="./assets/css/styles.css">
+</head>
+
+<body>
+    <!-- Cabeçalho fixo com menu, logo e botão de links. -->
+    <header class="cabecalho">
+        <button id="menu-toggle" class="cabecalho__menu" type="button" aria-label="Abrir menu">
+            <span class="material-symbols-outlined">menu</span>
+        </button>
+
+        <a class="marca" href="#inicio" aria-label="Voltar para o início">
+            <span class="marca__logo">
+                <img src="./assets/images/logo-gl-barbearia.png" alt="Logo circular da GL Barbearia">
+            </span>
+            <span class="marca__nome">GL Barbearia</span>
+        </a>
+
+        <a class="botao botao--principal" href="https://linktr.ee/arthurjustiniano" target="_blank"
+            rel="noopener noreferrer">Links</a>
+    </header>
+
+    <!-- Menu lateral que aparece quando o visitante clica no ícone. -->
+    <aside id="mobile-menu" class="menu-lateral" aria-label="Menu principal">
+        <div class="menu-lateral__topo">
+            <h2 class="menu-lateral__titulo">Menu</h2>
+            <button id="menu-close" class="menu-lateral__fechar" type="button" aria-label="Fechar menu">
+                <span class="material-symbols-outlined">close</span>
+            </button>
+        </div>
+
+        <nav class="menu-lateral__links">
+            <a id="menu-schedule" class="menu-lateral__link"
+                href="https://online.maapp.com.br/GLBARBEARIA?utm_source=ig&utm_medium=social&utm_content=link_in_bio&fbclid=PAZXh0bgNhZW0CMTEAc3J0YwZhcHBfaWQPOTM2NjE5NzQzMzkyNDU5AAGn7rjEbeZEIH9XJXR2HYJIbenLpTTrcx3AqHwzxOFMA-D962jBpuLQuXgsrYA_aem_1v5GhGQ9vhZkgg8m8b_S_w"
+                target="_blank" rel="noopener noreferrer">Agendamento online</a>
+            <a id="menu-location" class="menu-lateral__link"
+                href="https://www.google.com/maps/place/GL+Barbearia/@-20.8207856,-49.5096765,17z/data=!3m1!4b1!4m6!3m5!1s0x94bdaf002fc897fb:0x1f890e1f0bb46e34!8m2!3d-20.8207906!4d-49.5071016!16s%2Fg%2F11z0wg07kx?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank" rel="noopener noreferrer">Localização</a>
+            <a id="menu-contact" class="menu-lateral__link" href="https://wa.me/5517992789124" target="_blank"
+                rel="noopener noreferrer">Contato</a>
+        </nav>
+    </aside>
+
+    <main id="inicio">
+        <section class="hero">
+            <div class="hero__texto">
+                <h1>Sua essência, nosso corte.</h1>
+            </div>
+
+            <div class="hero__midia">
+                <div class="video-card">
+                    <video autoplay loop muted playsinline>
+                        <source src="./assets/js/videos/gl-barbearia.mp4" type="video/mp4">
+                    </video>
+                    <span class="video-card__borda"></span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Faixa animada mostrando alguns serviços da barbearia. -->
+        <section class="faixa-servicos" aria-label="Serviços em destaque">
+            <div class="faixa-servicos__lista">
+                <span>Cabelo</span><strong>•</strong>
+                <span>Barba</span><strong>•</strong>
+                <span>Cavanhaque</span><strong>•</strong>
+                <span>Sobrancelha</span><strong>•</strong>
+                <span>Pigmentação</span><strong>•</strong>
+                <span>Depilação</span><strong>•</strong>
+                <span>Pezinho</span><strong>•</strong>
+                <span>Cabelo</span><strong>•</strong>
+                <span>Barba</span><strong>•</strong>
+                <span>Cavanhaque</span><strong>•</strong>
+                <span>Sobrancelha</span><strong>•</strong>
+                <span>Pigmentação</span><strong>•</strong>
+                <span>Depilação</span><strong>•</strong>
+                <span>Pezinho</span><strong>•</strong>
+            </div>
+        </section>
+
+        <!-- Parte que apresenta a história e a imagem dos fundadores. -->
+        <section id="story" class="historia">
+            <div class="historia__imagem">
+                <div class="historia__moldura">
+                    <img src="./assets/images/gabriel-luan.png" alt="Gabriel e Luan, fundadores da GL Barbearia">
+                </div>
+            </div>
+
+            <div class="historia__texto">
+                <h2>Mais que uma barbearia, um espaço seu.</h2>
+                <p>
+                    A GL Barbearia nasceu da paixão de Gabriel e Luan pela arte da barbearia clássica, unindo técnica
+                    impecável a um atendimento personalizado. Em Rio Preto, somos referência para quem busca não apenas
+                    um corte, mas uma experiência de cuidado e renovação de identidade.
+                </p>
+                <blockquote>"Entrega o teu caminho ao Senhor, confia nele e ele o fará." — Salmos 37:5</blockquote>
+            </div>
+        </section>
+
+        <!-- Parte com endereço, botão para o Maps e mapa incorporado. -->
+        <section id="location" class="localizacao">
+            <div class="localizacao__texto">
+                <h2>Nossa localização</h2>
+                <p>Visite a GL Barbearia e viva uma experiência única de cuidado e estilo.</p>
+                <a class="botao botao--contorno"
+                    href="https://www.google.com/maps/place/GL+Barbearia/@-20.8207856,-49.5096765,17z/data=!3m1!4b1!4m6!3m5!1s0x94bdaf002fc897fb:0x1f890e1f0bb46e34!8m2!3d-20.8207906!4d-49.5071016!16s%2Fg%2F11z0wg07kx?entry=ttu&g_ep=EgoyMDI2MDUyNy4wIKXMDSoASAFQAw%3D%3D"
+                    target="_blank" rel="noopener noreferrer">Abrir no Maps</a>
+            </div>
+
+            <div class="localizacao__mapa">
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3729.2702537063674!2d-49.5071016!3d-20.820790599999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94bdaf002fc897fb%3A0x1f890e1f0bb46e34!2sGL%20Barbearia!5e0!3m2!1spt-BR!2sbr!4v1780162477029!5m2!1spt-BR!2sbr"
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade" title="Mapa da GL Barbearia"></iframe>
+            </div>
+        </section>
+
+        <!-- Chamada final para levar o visitante aos links da barbearia. -->
+        <section class="chamada-final">
+            <h2>Pronto para o próximo nível?</h2>
+            <a class="botao botao--grande" href="https://linktr.ee/arthurjustiniano" target="_blank"
+                rel="noopener noreferrer">Links</a>
+        </section>
+    </main>
+
+    <!-- Rodapé com marca, navegação e informações de contato. -->
+    <footer id="contact" class="rodape">
+        <div class="rodape__marca">
+            <span class="rodape__logo">
+                <img src="./assets/images/logo-gl-barbearia.png" alt="Logo da GL Barbearia no rodapé">
+            </span>
+            <strong>GL Barbearia</strong>
+            <p>© 2026 GL Barbearia. São José do Rio Preto, SP.</p>
+        </div>
+
+        <div class="rodape__coluna">
+            <h4>Navegação</h4>
+            <a href="#story">Nossa História</a>
+            <a href="#location">Localização</a>
+            <a href="#contact">Contato</a>
+        </div>
+
+        <div class="rodape__coluna">
+            <h4>Contato</h4>
+            <p>(17) 99278-9124</p>
+            <p>contato@glbarbearia.com.br</p>
+            <p>R. Santo Antônio, 2535 - Centro, 15130-000<br>Mirassol, SP</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript com os cliques do menu e a seção de serviços. -->
+    <script src="./assets/js/main.js"></script>
+</body>
+
+</html>
